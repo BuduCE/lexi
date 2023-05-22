@@ -26,10 +26,6 @@ const removeCartItem = (id) => {
     localStorage.setItem('shoppingcart', JSON.stringify(newCart));
 }
 
-const formatAmount = (amount) => {
-    return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-};
-
 console.log(shoppingCart.value)
 </script>
 
@@ -58,7 +54,7 @@ console.log(shoppingCart.value)
                 </div>
             </div>
 
-            <p>{{ formatAmount(cartproduct.price) }}</p>
+            <p>{{cartproduct.price}}</p>
 
             <div class="counter">
                 <button :disabled="cartproduct.count <= 1" @click="cartproduct.count--" >
@@ -69,16 +65,17 @@ console.log(shoppingCart.value)
             </div>
 
             <div class="total">
-                <p>{{ formatAmount(cartproduct.price * cartproduct.count) }} </p>
-                
-                <IconsClose @click="removeCartItem(cartproduct.id)"/>
+                <p>{{cartproduct.price * cartproduct.count}}</p>
+                <!-- <span>{{ typeof Number(cartproduct.price) }}</span> -->
+                <!-- <button @click="removeCartItem(cartproduct.id)" class="remove">Remove Product</button> -->
+                <IconsClose @click="removeCartItem(cartproduct.id)></IconClose
             </div>
         </div>
 
         <div class="total_price">
             <h3>Total Price:</h3>
             <!-- <p>₦ 4399.99</p> -->
-            <p>₦ {{ formatAmount(totalPrice) }}</p>
+            <p>₦ {{ totalPrice }}</p>
         </div>
     </div>
 

@@ -4,6 +4,8 @@ const { data: products } = await useFetch('/api/products'
         transform: (_products) => _products.data,
 })
 
+// const existingCart = ref([])
+
 const addToCart = (cartProduct) => {
     const existingCart = JSON.parse(localStorage.getItem('shoppingcart') || "[]")
     const existingItemIndex = existingCart.findIndex(product => product.id === cartProduct.id);
@@ -13,8 +15,12 @@ const addToCart = (cartProduct) => {
         const newItem = { ...cartProduct, count: 1 };
         existingCart.push(newItem);
     }
+    // existingCart.push(cartProduct)
     localStorage.setItem('shoppingcart', JSON.stringify(existingCart));
 }
+    
+    // localStorage.setItem('shoppingcart', JSON.stringify(this.cartItems));
+
 </script>
 
 <template>

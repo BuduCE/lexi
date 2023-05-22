@@ -4,6 +4,8 @@ const { data: products } = await useFetch('/api/products'
         transform: (_products) => _products.data,
 })
 
+// const existingCart = ref([])
+
 const addToCart = (cartProduct) => {
     const existingCart = JSON.parse(localStorage.getItem('shoppingcart') || "[]")
     const existingItemIndex = existingCart.findIndex(product => product.id === cartProduct.id);
@@ -14,7 +16,6 @@ const addToCart = (cartProduct) => {
         existingCart.push(newItem);
     }
     localStorage.setItem('shoppingcart', JSON.stringify(existingCart));
-}
 </script>
 
 <template>

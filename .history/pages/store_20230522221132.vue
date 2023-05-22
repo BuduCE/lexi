@@ -4,17 +4,28 @@ const { data: products } = await useFetch('/api/products'
         transform: (_products) => _products.data,
 })
 
+const existingCart = ref([])
+
 const addToCart = (cartProduct) => {
-    const existingCart = JSON.parse(localStorage.getItem('shoppingcart') || "[]")
-    const existingItemIndex = existingCart.findIndex(product => product.id === cartProduct.id);
-    if (existingItemIndex !== -1) {
-        existingCart[existingItemIndex].count++;
-    } else {
-        const newItem = { ...cartProduct, count: 1 };
-        existingCart.push(newItem);
-    }
+    const existingItemIndex = existingCart.value.findIndex(product => item.key === product.key);
+    existingCart.value = JSON.parse(localStorage.getItem('shoppingcart') || "[]")
+    existingCart.push(cartProduct)
     localStorage.setItem('shoppingcart', JSON.stringify(existingCart));
+
 }
+
+addToCart(product) {
+    
+    if (existingItemIndex !== -1) {
+        // If the product already exists in the cart, increase its count
+        this.cartItems[existingItemIndex].count++;
+    } else {
+        // If the product is not already in the cart, add it as a new item
+        const newItem = { ...product, count: 1 };
+        this.cartItems.push(newItem);
+    }
+    localStorage.setItem('shoppingcart', JSON.stringify(this.cartItems));
+},
 </script>
 
 <template>

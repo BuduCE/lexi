@@ -5,14 +5,10 @@ const { data: products } = await useFetch('/api/products'
 })
 
 const addToCart = (cartProduct) => {
-    const existingCart = JSON.parse(localStorage.getItem('shoppingcart') || "[]")
-    const existingItemIndex = existingCart.findIndex(product => product.id === cartProduct.id);
-    if (existingItemIndex !== -1) {
-        existingCart[existingItemIndex].count++;
-    } else {
-        const newItem = { ...cartProduct, count: 1 };
-        existingCart.push(newItem);
-    }
+    // const existingCart = JSON.parse(localStorage.getItem('shoppingcart') || "[]")
+    const 
+    existingCart.push(cartProduct)
+
     localStorage.setItem('shoppingcart', JSON.stringify(existingCart));
 }
 </script>

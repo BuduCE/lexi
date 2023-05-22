@@ -11,24 +11,12 @@
 const shoppingCart = ref([])
 shoppingCart.value = JSON.parse(localStorage.getItem('shoppingcart') || "[]")
 
-const totalPrice = computed(() => {
-    let price = 0
-    for(const product of shoppingCart.value){
-        price += product.price * product.count
-    }
-    return price
-})
-
 const removeCartItem = (id) => {
     const cartProducts = JSON.parse(localStorage.getItem('shoppingcart') || "[]")
     const newCart = cartProducts.filter((product) => product.id !== id)
     shoppingCart.value = newCart
     localStorage.setItem('shoppingcart', JSON.stringify(newCart));
 }
-
-const formatAmount = (amount) => {
-    return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-};
 
 console.log(shoppingCart.value)
 </script>
@@ -58,27 +46,27 @@ console.log(shoppingCart.value)
                 </div>
             </div>
 
-            <p>{{ formatAmount(cartproduct.price) }}</p>
+            <p>{{cartproduct.price}}</p>
 
             <div class="counter">
-                <button :disabled="cartproduct.count <= 1" @click="cartproduct.count--" >
+                <button @click="cartpro" >
                     -
                 </button>
                 <p class="count">{{ cartproduct.count }}</p>
-                <button @click="cartproduct.count++">+</button>
+                <button @click="count++">+</button>
             </div>
 
             <div class="total">
-                <p>{{ formatAmount(cartproduct.price * cartproduct.count) }} </p>
-                
-                <IconsClose @click="removeCartItem(cartproduct.id)"/>
+                <p>{{Number(cartproduct.price) * count}}</p>
+                <span>{{ typeof Number(cartproduct.price) }}</span>
+                <button @click="removeCartItem(cartproduct.id)" class="remove">Remove Product</button>
+                <!-- <IconsClose @click="removeCartItem(cartproduct.id) /> -->
             </div>
         </div>
 
         <div class="total_price">
             <h3>Total Price:</h3>
-            <!-- <p>₦ 4399.99</p> -->
-            <p>₦ {{ formatAmount(totalPrice) }}</p>
+            <p>₦ 4399.99</p>
         </div>
     </div>
 

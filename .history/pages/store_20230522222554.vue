@@ -14,7 +14,7 @@ const addToCart = (cartProduct) => {
         existingCart.push(newItem);
     }
     localStorage.setItem('shoppingcart', JSON.stringify(existingCart));
-}
+
 </script>
 
 <template>

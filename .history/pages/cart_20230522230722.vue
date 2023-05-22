@@ -78,7 +78,7 @@ console.log(shoppingCart.value)
         <div class="total_price">
             <h3>Total Price:</h3>
             <!-- <p>₦ 4399.99</p> -->
-            <p>₦ {{ formatAmount(totalPrice) }}</p>
+            <p>₦ {{ formattotalPrice }}</p>
         </div>
     </div>
 

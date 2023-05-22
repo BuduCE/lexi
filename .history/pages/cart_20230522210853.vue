@@ -1,23 +1,22 @@
 <script setup>
-// const count = ref(1)
+const count = ref(1)
  
-// const decrement = () => {
-//     if (count.value <= 1){
-//         return
-//     } 
-//     count.value--
-// }
+const decrement = () => {
+    if (count.value <= 1){
+        return
+    } 
+    count.value--
+}
 
 const shoppingCart = ref([])
-shoppingCart.value = JSON.parse(localStorage.getItem('shoppingcart') || "[]")
 
-const totalPrice = computed(() => {
-    let price = 0
-    for(const product of shoppingCart.value){
-        price += product.price * product.count
-    }
-    return price
-})
+// const getCart = () => {
+    
+//     for(const product of cartProducts){
+        
+//     }
+// }
+const cartProducts = JSON.parse(localStorage.getItem('shoppingcart') || "[]")
 
 const removeCartItem = (id) => {
     const cartProducts = JSON.parse(localStorage.getItem('shoppingcart') || "[]")
@@ -25,10 +24,6 @@ const removeCartItem = (id) => {
     shoppingCart.value = newCart
     localStorage.setItem('shoppingcart', JSON.stringify(newCart));
 }
-
-const formatAmount = (amount) => {
-    return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-};
 
 console.log(shoppingCart.value)
 </script>
@@ -47,7 +42,7 @@ console.log(shoppingCart.value)
             <h3>Total</h3>
         </div>
 
-        <div v-for="cartproduct in shoppingCart" :key="cartproduct.id" class="cart_items">
+        <div v-for="cartproduct in cartProducts" :key="cartproduct.id" class="cart_items">
             <div class="item">
                 <div>
                     <img src="@/lexibelt1.png" alt="" class="item_img">
@@ -55,30 +50,31 @@ console.log(shoppingCart.value)
                 <div class="item_info">
                     <h2>{{ cartproduct.name }}</h2>
                     <small>Fuel Source: Wood Only</small>
+                    <small>Change</small>
                 </div>
             </div>
 
-            <p>{{ formatAmount(cartproduct.price) }}</p>
+            <p>{{cartproduct.price}}</p>
 
             <div class="counter">
-                <button :disabled="cartproduct.count <= 1" @click="cartproduct.count--" >
+                <button @click="decrement" >
                     -
                 </button>
-                <p class="count">{{ cartproduct.count }}</p>
-                <button @click="cartproduct.count++">+</button>
+                <p class="count">{{ count }}</p>
+                <button @click="count++">+</button>
             </div>
 
             <div class="total">
-                <p>{{ formatAmount(cartproduct.price * cartproduct.count) }} </p>
-                
-                <IconsClose @click="removeCartItem(cartproduct.id)"/>
+                <p>{{Number(cartproduct.price) * count}}</p>
+                <span>{{ typeof Number(cartproduct.price) }}</span>
+                <button @click="removeCartItem(cartproduct.id)" class="remove">Remove Product</button>
+                <!-- <IconsClose @click="removeCartItem(cartproduct.id) /> -->
             </div>
         </div>
 
         <div class="total_price">
             <h3>Total Price:</h3>
-            <!-- <p>₦ 4399.99</p> -->
-            <p>₦ {{ formatAmount(totalPrice) }}</p>
+            <p>₦ 4399.99</p>
         </div>
     </div>
 
@@ -120,8 +116,7 @@ console.log(shoppingCart.value)
     align-items: center;
 }
 .item_img{
-    width: 50px;
-    padding-right: 10px;
+    width: 60%;
     border-radius: 50%;
 }
 .counter{
@@ -142,9 +137,10 @@ console.log(shoppingCart.value)
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-left: 60%;
+    /* float: right;
+    padding-right: 15%; */
     padding-top: 100px;
-    margin-bottom: 30px;
+    padding-bottom: 30px;
     border-bottom: 2px solid #333;
 }
 .empty_cart{
