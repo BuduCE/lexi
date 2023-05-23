@@ -4,8 +4,10 @@ export default defineNuxtConfig({
         assets: "/<rootDir>/assets",
     },
     buildDir: 'dist',
+
     css: [
         "~/assets/main.css"
     ],
     ssr: false,
+    target: 'static'
 });

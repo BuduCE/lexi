@@ -4,6 +4,10 @@ export default defineNuxtConfig({
         assets: "/<rootDir>/assets",
     },
     buildDir: 'dist',
+    target: 'static',
+    generate: {
+        fallback: true,
+    }
     css: [
         "~/assets/main.css"
     ],

@@ -3,7 +3,7 @@ export default defineNuxtConfig({
     alias: {
         assets: "/<rootDir>/assets",
     },
-    buildDir: 'dist',
+    buildD
     css: [
         "~/assets/main.css"
     ],
