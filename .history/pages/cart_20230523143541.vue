@@ -50,7 +50,7 @@ console.log(shoppingCart.value)
         <div v-for="cartproduct in shoppingCart" :key="cartproduct.id" class="cart_items">
             <div class="item">
                 <div>
-                    <img src="@/assets/lexislide3.jpg" alt="" class="item_img">
+                    <img src="/lexibelt1.png" alt="" class="item_img">
                 </div>
                 <div class="item_info">
                     <h2>{{ cartproduct.name }}</h2>

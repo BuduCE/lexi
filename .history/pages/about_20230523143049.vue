@@ -15,7 +15,7 @@
 
             <section class="why-us">
                 <div class="why-us-img">
-                    <img src="@/assets/Lexi_About_Wallpaper.png" alt="" class="lexi-abt-img">
+                    <img src="/assets/Lexi_About_Wallpaper.png" alt="" class="lexi-abt-img">
                 </div>
 
                 <div class="why-us-txt">

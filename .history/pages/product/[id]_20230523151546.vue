@@ -24,11 +24,11 @@ console.log(product)
                 </div>
 
                 <div class="small-img">
-                    <img src="@/assets/store3.svg" alt="" class="small-pg-img" @click="smallImgb">
+                    <img src="@/assets/store2.svg" alt="" class="small-pg-img" @click="smallImgb">
                 </div>
 
                 <div class="small-img">
-                    <img src="@/assets/store2.svg" alt="" class="small-pg-img" @click="smallImgc">
+                    <img src="@/homeBg1.jpg" alt="" class="small-pg-img" @click="smallImgc">
                 </div>
             </div>
         </div>

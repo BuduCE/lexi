@@ -16,19 +16,19 @@ console.log(product)
 
     <section class="product-pg-info">
         <div class="product-pg-img">
-            <img src="@/assets/store1.svg" alt="" class="big-pg-img" id="mainImg">
+            <img src="@/assets/homeBg2.jpg" alt="" class="big-pg-img" id="mainImg">
 
             <div class="small-img-grp">
                 <div class="small-img">
-                    <img src="@/assets/store2.svg" alt="" class="small-pg-img" @click="smallImga">
+                    <img src="@/homeBg2.jpg" alt="" class="small-pg-img" @click="smallImga">
                 </div>
 
                 <div class="small-img">
-                    <img src="@/assets/store3.svg" alt="" class="small-pg-img" @click="smallImgb">
+                    <img src="@/homeBg2.jpg" alt="" class="small-pg-img" @click="smallImgb">
                 </div>
 
                 <div class="small-img">
-                    <img src="@/assets/store2.svg" alt="" class="small-pg-img" @click="smallImgc">
+                    <img src="@/homeBg1.jpg" alt="" class="small-pg-img" @click="smallImgc">
                 </div>
             </div>
         </div>

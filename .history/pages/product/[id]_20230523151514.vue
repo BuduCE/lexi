@@ -20,15 +20,15 @@ console.log(product)
 
             <div class="small-img-grp">
                 <div class="small-img">
-                    <img src="@/assets/store2.svg" alt="" class="small-pg-img" @click="smallImga">
+                    <img src="@/homeBg2.jpg" alt="" class="small-pg-img" @click="smallImga">
                 </div>
 
                 <div class="small-img">
-                    <img src="@/assets/store3.svg" alt="" class="small-pg-img" @click="smallImgb">
+                    <img src="@/homeBg2.jpg" alt="" class="small-pg-img" @click="smallImgb">
                 </div>
 
                 <div class="small-img">
-                    <img src="@/assets/store2.svg" alt="" class="small-pg-img" @click="smallImgc">
+                    <img src="@/homeBg1.jpg" alt="" class="small-pg-img" @click="smallImgc">
                 </div>
             </div>
         </div>
