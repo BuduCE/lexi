@@ -1,0 +1,6 @@
+<template>
+    <Header />
+
+    
+    <Footer />
+</template>
