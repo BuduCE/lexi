@@ -84,7 +84,7 @@ form{
 }
 @media screen and (max-width: 518px){
     .form_entity{
-        grid-template-columns: 1fr;
+        
     }
     .form_entity label{
         display: none;
