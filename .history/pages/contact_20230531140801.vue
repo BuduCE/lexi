@@ -127,8 +127,7 @@ form{
         width: 90%;
     }
     .form_btn{
-        width: 45%;
-        padding: 10px 15px;
+        padding: 5px 10px;
         border-radius: 25px;
     }
 }
