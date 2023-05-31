@@ -147,7 +147,7 @@ const handleMenu = () => showMenu.value = !showMenu.value
     .hamburger_close{
         position: absolute;
         top: 0;
-        right: 10px;
+        right: 5px;
     }
     .hamburger{
         background: none;

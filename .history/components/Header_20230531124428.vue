@@ -137,7 +137,7 @@ const handleMenu = () => showMenu.value = !showMenu.value
             -webkit-box-shadow: -8px 9px 14px -3px rgba(0, 0, 0, 0.78);
             -moz-box-shadow: -8px 9px 14px -3px rgba(0, 0, 0, 0.78);
 
-        /* position: relative; */
+        position: relative;
     }
     .desk_nav a {
         padding: 15px;
@@ -147,7 +147,7 @@ const handleMenu = () => showMenu.value = !showMenu.value
     .hamburger_close{
         position: absolute;
         top: 0;
-        right: 10px;
+        right: 25px;
     }
     .hamburger{
         background: none;

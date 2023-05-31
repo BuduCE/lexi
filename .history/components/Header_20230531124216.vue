@@ -136,8 +136,6 @@ const handleMenu = () => showMenu.value = !showMenu.value
         box-shadow: -8px 9px 14px -3px rgba(0, 0, 0, 0.78);
             -webkit-box-shadow: -8px 9px 14px -3px rgba(0, 0, 0, 0.78);
             -moz-box-shadow: -8px 9px 14px -3px rgba(0, 0, 0, 0.78);
-
-        /* position: relative; */
     }
     .desk_nav a {
         padding: 15px;
@@ -145,9 +143,10 @@ const handleMenu = () => showMenu.value = !showMenu.value
         font-size: 1.5em;
     }
     .hamburger_close{
+        /* font-size: 0.75rem; */
         position: absolute;
         top: 0;
-        right: 10px;
+        right: 5;
     }
     .hamburger{
         background: none;
