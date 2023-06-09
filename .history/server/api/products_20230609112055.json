@@ -1,0 +1,76 @@
+[
+    {
+        "id": "1",
+        "img": "lexibelt1",
+        "imgT": "lexibelt2",
+        "img": "lexibelt3",
+        "class": "mules",
+        "name": "Mule for men",
+        "Desc": "Lorem ipsum",
+        "price": 15000,
+        "priceOff": 15000
+    },
+    {
+        "id": "2",
+        "img": "lexibelt2",
+        "class": "shoes",
+        "name": "Open-head Sandal",
+        "Desc": "Lorem ipsum consectetur adipisicing elit.",
+        "price": 9000,
+        "priceOff": 15000
+    },
+    {
+        "id": "3",
+        "img": "lexiwallet1",
+        "class": "belts",
+        "name": "Mule for men",
+        "Desc": "Lorem ipsum dolor sit amet, consectetur",
+        "price": 13000,
+        "priceOff": 23000
+    },
+    {
+        "id": "4",
+        "img": "lexibelt2",
+        "class": "wallets",
+        "name": "Open-head Sandal",
+        "Desc": "consectetur adipisicing elit.",
+        "price": 90000,
+        "priceOff": 115000
+    },
+    {
+        "id": "5",
+        "img": "lexibelt2",
+        "class": "sliders",
+        "name": "Mule for men",
+        "Desc": "amet, consectetur adipisicing elit.",
+        "price": 45000,
+        "priceOff": 55000
+    },
+    {
+        "id": "6",
+        "img": "lexibelt1",
+        "class": "mules",
+        "name": "Open-head Sandal",
+        "Desc": "dolor sit amet, consecteturelit.",
+        "price": 99000,
+        "priceOff": 108000
+    },
+    {
+        "id": "7",
+        "img": "store1",
+        "class": "shoes",
+        "name": "Mule for men",
+        "Desc": "consectetur adipisicing elit.",
+        "price": 125000,
+        "priceOff": 133000
+    },
+    {
+        "id": "8",
+        "img": "lexibelt1",
+        "class": "belts",
+        "name": "Open-head Sandal",
+        "Desc": "Lorem ipsum dolor",
+        "price": 50000,
+        "priceOff": 65000
+    }
+]
