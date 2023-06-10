@@ -1,0 +1,20 @@
+<template>
+    <Header />
+
+    <div class="not_available">
+        <h1>404</h1>
+        <h4>Page not found</h4>
+        <p>The page you're looking for does not seem to exist</p>
+        <NuxtLink to="/" class="">Go to Home</NuxtLink>
+    </div>
+</template>
+
+<style>
+.not_available{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+</style>
