@@ -36,7 +36,7 @@ const sendMail = async () => {
         const cartItems = () => {
             let str = "";
             shoppingCart.value.map((item) => {
-                str += `${item.name} x ${item.price}\n`;
+                str += `${item.name} x ${item.price} = ${item.price} \`;
             });
             return str;
         };
@@ -66,7 +66,6 @@ const sendMail = async () => {
             name.value = '';
             address.value = '';
             phone.value = '';
-            // shoppingCart.value = []
         }, 4000);
     } catch (error) {
         btnText.value = 'Fail!';

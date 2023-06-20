@@ -1,5 +1,6 @@
 <script setup>
 const shoppingCart = ref([])
+const orderSummary = ref([])
 shoppingCart.value = JSON.parse(localStorage.getItem('shoppingcart') || "[]")
 
 
@@ -30,33 +31,16 @@ const sendMail = async () => {
 
     if (!email.value || !name.value || !address.value || !phone.value) return;
 
+    orderSummary = product
+
     try {
         btnText.value = 'Sending...';
-
-        const cartItems = () => {
-            let str = "";
-            shoppingCart.value.map((item) => {
-                str += `${item.name} x ${item.price}\n`;
-            });
-            return str;
-        };
-
-        // orderSummary.value = shoppingCart.value.map((item) => {
-        //     return {
-        //         name: item.name,
-        //         price: item.price
-        //     };
-        // });
-
         const data = {
             email: email.value,
             name: name.value,
             address: address.value,
-            phone: phone.value,
-            summary: cartItems()
+            phone: phone.value
         };
-
-        console.log(cartItems())
 
         emailjs.send(runtimeConfig.public.serviceId, runtimeConfig.public.templateId, data, runtimeConfig.public.publicKey);
         btnText.value = 'Sent!';
@@ -66,7 +50,6 @@ const sendMail = async () => {
             name.value = '';
             address.value = '';
             phone.value = '';
-            // shoppingCart.value = []
         }, 4000);
     } catch (error) {
         btnText.value = 'Fail!';

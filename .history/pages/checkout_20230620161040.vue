@@ -1,5 +1,6 @@
 <script setup>
 const shoppingCart = ref([])
+
 shoppingCart.value = JSON.parse(localStorage.getItem('shoppingcart') || "[]")
 
 
@@ -25,6 +26,7 @@ const name = ref('');
 const email = ref('');
 const address = ref('');
 const phone = ref('');
+const orderSummary = ref([]);
 
 const sendMail = async () => {
 
@@ -33,30 +35,22 @@ const sendMail = async () => {
     try {
         btnText.value = 'Sending...';
 
-        const cartItems = () => {
-            let str = "";
-            shoppingCart.value.map((item) => {
-                str += `${item.name} x ${item.price}\n`;
-            });
-            return str;
-        };
-
-        // orderSummary.value = shoppingCart.value.map((item) => {
-        //     return {
-        //         name: item.name,
-        //         price: item.price
-        //     };
-        // });
+        orderSummary.value = shoppingCart.value.map((item) => {
+            return {
+                name: item.name,
+                price: item.price
+            };
+        });
 
         const data = {
             email: email.value,
             name: name.value,
             address: address.value,
             phone: phone.value,
-            summary: cartItems()
+            summary: orderSummary.value
         };
 
-        console.log(cartItems())
+        console.log(orderSummary.value)
 
         emailjs.send(runtimeConfig.public.serviceId, runtimeConfig.public.templateId, data, runtimeConfig.public.publicKey);
         btnText.value = 'Sent!';
@@ -66,7 +60,6 @@ const sendMail = async () => {
             name.value = '';
             address.value = '';
             phone.value = '';
-            // shoppingCart.value = []
         }, 4000);
     } catch (error) {
         btnText.value = 'Fail!';

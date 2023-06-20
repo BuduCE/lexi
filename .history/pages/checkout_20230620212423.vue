@@ -66,7 +66,7 @@ const sendMail = async () => {
             name.value = '';
             address.value = '';
             phone.value = '';
-            // shoppingCart.value = []
+            sh
         }, 4000);
     } catch (error) {
         btnText.value = 'Fail!';
