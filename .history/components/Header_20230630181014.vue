@@ -24,8 +24,9 @@ const handleMenu = () => showMenu.value = !showMenu.value
             <p class="logo" id="mob_logo">LEXI</p>
     
             <div v-show="showMenu" class="desk_nav" id="mobi-links">
-
+                
                 <IconsCloseHam class="logomob hamburger_close" id="close_hamburger" @click="handleMenu"/>
+
                 
                 <NuxtLink to="/" class="nav_option">Home</NuxtLink>
 
@@ -119,23 +120,27 @@ const handleMenu = () => showMenu.value = !showMenu.value
     .desk_nav{
         /* display: none; */
         display: flex;
-        width: 45%;
+        width: 55%;
         flex-direction: column;
-        padding: 5px 0;
+        padding: 20px 0;
+        /* text-align: center; */
         position: fixed;
         top: 0;
         right: 0;
-        background: #ffffff;
+        background: #f7e1b5;
         z-index: 5;
+        position: fixed;
         animation: fadeIn 4s;
         box-shadow: -8px 9px 14px -3px rgba(0, 0, 0, 0.78);
             -webkit-box-shadow: -8px 9px 14px -3px rgba(0, 0, 0, 0.78);
             -moz-box-shadow: -8px 9px 14px -3px rgba(0, 0, 0, 0.78);
+
+        /* position: relative; */
     }
     .desk_nav a {
-        padding: 10px;
+        padding: 15px;
         cursor: pointer;
-        /* font-size: 1.5em; */
+        font-size: 1.5em;
     }
     .hamburger_close{
         position: absolute;

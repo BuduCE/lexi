@@ -26,6 +26,7 @@ const handleMenu = () => showMenu.value = !showMenu.value
             <div v-show="showMenu" class="desk_nav" id="mobi-links">
 
                 <IconsCloseHam class="logomob hamburger_close" id="close_hamburger" @click="handleMenu"/>
+
                 
                 <NuxtLink to="/" class="nav_option">Home</NuxtLink>
 
@@ -133,7 +134,7 @@ const handleMenu = () => showMenu.value = !showMenu.value
             -moz-box-shadow: -8px 9px 14px -3px rgba(0, 0, 0, 0.78);
     }
     .desk_nav a {
-        padding: 10px;
+        padding: 15px;
         cursor: pointer;
         /* font-size: 1.5em; */
     }

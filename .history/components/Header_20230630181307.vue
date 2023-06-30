@@ -26,6 +26,7 @@ const handleMenu = () => showMenu.value = !showMenu.value
             <div v-show="showMenu" class="desk_nav" id="mobi-links">
 
                 <IconsCloseHam class="logomob hamburger_close" id="close_hamburger" @click="handleMenu"/>
+
                 
                 <NuxtLink to="/" class="nav_option">Home</NuxtLink>
 
